@@ -1,0 +1,186 @@
+:root {
+    --primary-color: rgb(180, 180, 180);
+    --header-color: #ffffff;
+    --body-bg: #fbe9e7;
+    --footer-bg: #ffffff;
+    --font-color: #333;
+    --symbol-color: #ff7034;
+    --symbol-dark: #f4511e;
+    --symbol-hover: #ff8a65;
+    --slider-circile: #000000;
+}
+
+[data-theme="dark"] {
+    --primary-color: #333333;
+    --header-color: #000000;
+    --footer-bg: #000000;
+    --symbol-color: transparent;
+    --symbol-hover: #ff5722;
+    --slider-circile: #ffffff;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--primary-color);
+}
+
+.carculator {
+    display: grid;
+    grid-template-rows: 8% 25% auto;
+    width: 300px;
+    height: 500px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0.1px;
+}
+
+.carculator-header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 12px 15px;
+    background-color: var(--header-color);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.carculator-body {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 15px;
+    background-color: var(--body-bg);
+    text-align: right;
+}
+
+.carculator-footer {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto auto auto auto;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    justify-content: space-around;
+    padding: 10px 0;
+    background-color: var(--footer-bg);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.carculator-footer div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--font-color);
+    transition: 0.4s all;
+}
+
+.carculator-footer div.symbol {
+    background-color: var(--symbol-color);
+    color: #ffffff;
+}
+
+.carculator-footer div.symbol-dark {
+    background-color: var(--symbol-dark);
+    color: #ffffff;
+}
+
+.carculator-footer div:hover {
+    cursor: pointer;
+}
+
+.carculator-footer div:hover {
+    background-color: #e5e5e5;
+}
+
+.carculator-footer div.symbol:hover {
+    background-color: var(--symbol-hover);
+}
+
+.carculator-footer div.symbol-dark:hover {
+    background-color: var(--symbol-dark);
+}
+
+
+/* ----------Silder switch css ----------Baslangic*/
+
+.theme-switch-wrappper {
+    display: flex;
+    align-items: center;
+}
+
+
+.theme-switch-wrappper em {
+    margin-left: 10px;
+    font-size: 1rem;
+}
+
+.theme-switch {
+    display: inline-block;
+    height: 16px;
+    position: relative;
+    width: 50px;
+}
+
+.theme-switch input {
+    display: none;
+}
+
+.slider {
+    background-color: #cccccc;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: 0.4s;
+}
+
+.slider:before {
+    background-color: var(--slider-circile);
+    content: "";
+    bottom: -5px;
+    height: 26px;
+    right: 25px;
+    position: absolute;
+    transition: 0.4s;
+    width: 26px;
+}
+
+input:checked+.silder {
+    background-color: #66bb6a;
+}
+
+input:checked+.slider:before {
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+
+/* ----------Silder switch css ----------Son*/
